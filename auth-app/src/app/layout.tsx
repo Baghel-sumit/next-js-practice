@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,12 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Auth app</title>
+      </head>
       <body 
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
+          <Toaster position='top-center' />
           {children}
       </body>
     </html>

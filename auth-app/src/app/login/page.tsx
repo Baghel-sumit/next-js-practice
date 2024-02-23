@@ -43,7 +43,7 @@ const page = () => {
       const result = await axios.post('/api/v1/users/login', values);
       if (result.status === 200) {
         toast.success('Login success');
-        router.push('/signup');
+        router.push('/');
       }
     } catch (error: any) {
       toast.error(error.message);
